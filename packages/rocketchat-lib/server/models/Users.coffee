@@ -74,6 +74,13 @@ RocketChat.models.Users = new class extends RocketChat.models._Base
 				$exists: true
 
 		return @find query, options
+		
+	findUsersByUsernamesRegex: (username) ->
+		usernameRegex = new RegExp username, "i"
+		query = 
+			username: usernameRegex
+			
+		return @find query
 
 	findActiveByUsernameRegexWithExceptions: (username, exceptions = [], options = {}) ->
 		if not _.isArray exceptions

@@ -102,6 +102,7 @@ Package.onUse(function(api) {
 	api.addFiles('server/methods/insertOrUpdateUser.coffee', 'server');
 	api.addFiles('server/methods/setEmail.js', 'server');
 	api.addFiles('server/methods/restartServer.coffee', 'server');
+	api.addFiles('server/methods/listUsers.coffee', 'server');
 	api.addFiles('server/methods/filterBadWords.js', ['server']);
 
 	// SERVER STARTUP
