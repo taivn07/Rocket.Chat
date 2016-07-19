@@ -80,7 +80,9 @@ RocketChat.models.Users = new class extends RocketChat.models._Base
 		query = 
 			username: usernameRegex
 			
-		return @find query
+		options = { fields: { _id: 1, username: 1, status: 1 }  }
+			
+		return @find query, options
 
 	findActiveByUsernameRegexWithExceptions: (username, exceptions = [], options = {}) ->
 		if not _.isArray exceptions
